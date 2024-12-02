@@ -58,17 +58,52 @@
 
 ## 2.3. Metodologia
 
-*Descreva a metodologia utilizada para desenvolver o projeto. Quais foram as etapas e processos seguidos?*
+**Para este projeto seguimos as etapas abaixo:**
+
+**- Carregamento dos Dados**
+
+Os dados foram carregados a partir de um arquivo CSV denominado produtos_agricolas.csv.
+
+**- Criação de Features**
+
+Foi criada a variável alvo irrigation_on, que indica se a irrigação deve estar ligada ou desligada, com base nas condições de temperatura, umidade e precipitação. Além disso, a coluna label foi renomeada para culture.
+
+**- Análise Exploratória dos Dados**
+
+Foram obtidas informações detalhadas sobre o DataFrame, incluindo o número de entradas e os tipos de dados. Além disso, foi criada uma matriz de correlação para visualizar as relações entre as variáveis.
+
+**- Criação do Pipeline de Pré-processamento e Classificação**
+
+Foi definido um pipeline que inclui a normalização dos dados (MinMaxScaler) e um classificador (RandomForestClassifier).
+
+**- Treinamento do Modelo**
+
+Os dados foram separados em variáveis independentes (X) e a variável dependente (y). Em seguida, o pipeline foi treinado com esses dados.
+
+**- Avaliação da Importância das Variáveis**
+
+Foi extraído o classificador do pipeline e plotada a importância relativa das variáveis para o problema de irrigação automática.
+
+**- Exportação do Modelo**
+
+O pipeline treinado foi exportado para um arquivo .joblib para uso futuro.
 
 # <a name="c3"></a>3. Desenvolvimento do Projeto
 
 ## 3.1. Tecnologias Utilizadas
 
-*Liste as tecnologias, ferramentas e bibliotecas utilizadas no desenvolvimento do projeto de IA.*
+*As bibliotecas necessárias foram importadas, incluindo ferramentas para manipulação de dados (pandas), visualização (seaborn e matplotlib), criação de pipelines (sklearn.pipeline), pré-processamento (sklearn.preprocessing), validação cruzada (sklearn.model_selection), classificação (sklearn.ensemble) e serialização de modelos (joblib).*
 
 ## 3.2. Modelagem e Algoritmos
 
 *Descreva os modelos e algoritmos de IA utilizados no projeto. Explique por que esses modelos foram escolhidos e como foram implementados.*
+
+*O principal modelo de IA utilizado neste projeto foi o RandomForestClassifier, que é um algoritmo de aprendizado supervisionado usado para classificação. Ele consiste em um conjunto de árvores de decisão e opera construindo múltiplas árvores durante o treinamento e gerando a classe que é o modo das classes (classificação) ou a média das previsões (regressão) das árvores individuais.*
+
+*A implementação do RandomForestClassifier foi realizada através de um pipeline de pré-processamento e classificação*
+
+O uso do RandomForestClassifier neste projeto se mostrou adequado devido à sua robustez, precisão, resistência ao overfitting e capacidade de avaliar a importância das variáveis. A implementação através do pipeline de pré-processamento e classificação com a biblioteca scikit-learn facilitou o desenvolvimento e a manutenção do modelo, garantindo um fluxo de trabalho eficiente e eficaz para a previsão da necessidade de irrigação automática.
+
 
 ## 3.3. Treinamento e Teste
 

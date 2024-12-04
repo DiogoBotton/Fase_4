@@ -184,4 +184,7 @@ A solução desenvolvida atingiu com sucesso o objetivo principal de criar um mo
 
 **Analise exploratória**
 
-<img src="" width="300" height="200">
+<img src="../assets/analise_exploratoria.png" width="300" height="200">
+
+<img src="../assets/boxplot.png" alt="Boxplot"  width="300" height="200">
+

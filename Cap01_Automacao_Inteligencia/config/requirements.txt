@@ -1,0 +1,16 @@
+**API requirements**
+- fastapi
+- uvicorn
+- sqlalchemy
+- pydantic
+- oracledb
+- python-dotenv
+
+**Streamlit APP requirements**
+- streamlit
+- matplotlib
+- seaborn
+- pandas
+- plotly
+- joblib
+- scikit-learn

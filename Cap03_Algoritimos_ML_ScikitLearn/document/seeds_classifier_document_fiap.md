@@ -150,13 +150,13 @@ A solução desenvolvida atingiu com sucesso o objetivo principal de criar um mo
 - Otimização: O uso de técnicas de busca de hiperparâmetros garantiu o melhor desempenho possível para cada modelo.
 - Interpretabilidade: A análise das variáveis mais importantes fornece insights valiosos sobre as características físicas mais relevantes para a classificação.
 
-**Pontos a Melhorar**
+**Pontos a melhorar**
 
 - Validação em campo: O modelo ainda precisa ser testado em condições reais de uso em cooperativas agrícolas.
 - Expansão do conjunto de dados: Aumentar a diversidade e quantidade de amostras pode melhorar ainda mais a robustez do modelo.
 - Integração com sistemas existentes: Desenvolver interfaces para integração com os sistemas já utilizados pelas cooperativas.
 
-**Plano de Ações Futuras**
+**Plano de ações futuras**
 
 - Implementar um projeto piloto em uma cooperativa parceira para validação em campo.
 - Desenvolver um sistema de coleta contínua de dados para expansão e atualização do conjunto de treinamento.
@@ -181,3 +181,7 @@ A solução desenvolvida atingiu com sucesso o objetivo principal de criar um mo
 # <a name="c7"></a>Anexos
 
 *Inclua aqui quaisquer complementos para seu projeto, como diagramas, imagens, tabelas etc. Organize em sub-tópicos utilizando headings menores (use ## ou ### para isso).*
+
+**Analise exploratória**
+
+<img src="" width="300" height="200">

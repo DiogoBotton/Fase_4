@@ -26,7 +26,7 @@
 
 ## 📜 Descrição
 
-*Este sistema de irrigação automatizado tem como objetivo otimizar a gestão da água e medir os nutrientes em plantações, garantindo um crescimento saudável e eficiente das culturas. Ele monitora a umidade do solo, temperatura, pH e os níveis de potássio e fósforo, acionando a bomba de água quando necessário.*
+Este sistema de irrigação automatizado tem como objetivo otimizar a gestão da água e medir os nutrientes em plantações, garantindo um crescimento saudável e eficiente das culturas. Ele monitora a umidade do solo, temperatura, pH e os níveis de potássio e fósforo, acionando a bomba de água quando necessário.
 
 
 ## 📁 Estrutura de pastas

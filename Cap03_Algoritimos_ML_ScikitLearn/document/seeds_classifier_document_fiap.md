@@ -58,7 +58,7 @@ Confiabilidade: O uso de algoritmos de aprendizado de máquina minimiza erros hu
 
 ## 2.1. Objetivos do Projeto
 
-*Desenvolver um modelo de aprendizado de máquina que classifique variedades de grãos de trigo com base em suas características físicas.
+Desenvolver um modelo de aprendizado de máquina que classifique variedades de grãos de trigo com base em suas características físicas.
 
 ## 2.2. Público-Alvo
 
@@ -66,7 +66,11 @@ Cooperativas agrícolas de pequeno porte que buscam uma solução classificaçã
 
 ## 2.3. Metodologia
 
-*Descreva a metodologia utilizada para desenvolver o projeto. Quais foram as etapas e processos seguidos?*
+Primeiramente realizamos uma análise exploratória para entender os dados, verificando o balanceamento dos dados, verificando dados nulos ou vazios, a distribuição dos dados, matriz de correlação e gráficos de dispersão.
+
+Em seguida, começamos a dividir os dados em treino e teste e fazer o treinamento com a metodologia mais simples, a Hold Out, que se trata da separação dos dados em treino e teste apenas uma única vez.
+
+Após os testes do modelo, verificamos a necessidade de realizar validação cruzada para ter uma visão mais geral sobre o modelo e em seguida, adicionamos busca de hiperparâmetros com validação cruzada com GridSearchCV e RandomizedSearchCV.
 
 # <a name="c3"></a>3. Desenvolvimento do Projeto
 
@@ -76,17 +80,60 @@ Para o desenvolvimento deste projeto, utilizamos as bibliotecas pandas, matplotl
 
 ## 3.2. Modelagem e Algoritmos
 
-*Descreva os modelos e algoritmos de IA utilizados no projeto. Explique por que esses modelos foram escolhidos e como foram implementados.*
+Utilizamos 4 tipos de algorítmos diferentes para comparação:
+- Árvore de Decisão
+- Floresta Aleatória
+- SVC
+- KNN
+
+**Árvore de Decisão (Decision Tree)**
+A Árvore de Decisão foi selecionada devido à sua capacidade de criar regras hierárquicas e interpretáveis. Esse algoritmo constrói divisões sucessivas nos dados com base em condições que maximizam a separação entre as classes, o que é útil para problemas onde a decisão pode ser representada por uma sequência lógica de condições.
+
+**Floresta Aleatória (Random Forest)**
+A Floresta Aleatória foi incluída como uma extensão das Árvores de Decisão, agregando previsões de múltiplas árvores treinadas em diferentes amostras do conjunto de dados. Essa abordagem reduz o risco de overfitting, melhora a generalização e oferece um modelo robusto para problemas com variáveis interdependentes, como as características físicas e químicas dos grãos.
+
+**SVC (Support Vector Classifier)**
+O SVC foi escolhido para explorar a hipótese de que os dados podem ser separáveis por um hiperplano ótimo em um espaço dimensional mais alto. Esse modelo é particularmente eficaz em casos onde as classes têm fronteiras não lineares e os dados possuem ruído ou complexidade nas interseções entre classes.
+
+**K-Nearest Neighbors (KNN)**
+O KNN foi incluído como uma abordagem baseada em instâncias, avaliando a proximidade dos dados no espaço das características. Ele foi selecionado para explorar a hipótese de que a classificação de cada grão pode ser inferida diretamente de seus vizinhos mais próximos, sem a necessidade de modelagem de um hiperplano ou construção hierárquica.
 
 ## 3.3. Treinamento e Teste
 
-*Descreva o processo de treinamento e teste dos modelos de IA. Inclua informações sobre os conjuntos de dados utilizados, métricas de avaliação e resultados obtidos.*
+Inicialmente, adotamos a abordagem mais simples para treinamento e avaliação, utilizando a metodologia Hold-Out. Essa técnica consiste em dividir o conjunto de dados em duas partes: uma para treinamento e outra para teste, mantendo essa separação fixa ao longo do processo. Essa abordagem inicial nos permitiu avaliar rapidamente o desempenho dos modelos treinados em dados não vistos.
+
+Com base nos primeiros resultados, identificamos a necessidade de uma avaliação mais robusta e representativa. Para isso, implementamos a Validação Cruzada (Cross-Validation), uma metodologia que divide os dados em múltiplos subconjuntos (ou folds) e realiza várias iterações de treinamento e teste, garantindo que todos os dados sejam utilizados em ambas as fases. Essa técnica nos forneceu uma visão mais geral sobre a performance dos modelos, reduzindo o viés associado à separação inicial dos dados.
+
+No entanto, percebemos que a validação cruzada sozinha não era suficiente para garantir a escolha do melhor modelo, uma vez que os hiperparâmetros dos algoritmos tinham um impacto significativo no desempenho final. Para resolver isso, incorporamos estratégias de otimização de hiperparâmetros:
+
+**GridSearchCV:** 
+Realizou uma busca exaustiva por todas as combinações possíveis de valores de hiperparâmetros, garantindo que não houvesse lacunas nas opções avaliadas.
+
+**RandomizedSearchCV:** 
+Complementou a busca, explorando combinações aleatórias de hiperparâmetros em um espaço definido, reduzindo o custo computacional em cenários com muitas combinações possíveis.
+Essas abordagens combinadas nos permitiram identificar tanto os melhores hiperparâmetros quanto o modelo mais adequado ao problema, garantindo uma escolha otimizada e fundamentada para o nosso caso de uso.
 
 # <a name="c4"></a>4. Resultados e Avaliações
 
 ## 4.1. Análise dos Resultados
 
-*Analise os resultados obtidos com os modelos de IA. Compare os resultados esperados com os resultados reais e discuta as possíveis razões para as diferenças.*
+Após aplicar os modelos (Árvore de Decisão, Floresta Aleatória, SVC e KNN) e realizar a busca de hiperparâmetros, os resultados mostraram que o KNN apresentou o melhor desempenho, alcançando um test_score de 96%. Em seguida, o SVC obteve 95%, enquanto a Floresta Aleatória e a Árvore de Decisão tiveram desempenhos semelhantes, com 93,33% cada.
+
+**Variáveis Mais Importantes**
+Uma análise das variáveis mais relevantes para os modelos revelou algumas diferenças e semelhanças:
+
+- Para a maioria dos modelos, o comprimento do sulco do núcleo destacou-se como a variável mais importante na classificação dos grãos, indicando sua forte correlação com os resultados.
+- Nos modelos baseados em árvores (Floresta Aleatória e Árvore de Decisão), as duas variáveis mais relevantes foram o comprimento do sulco do núcleo e a área, sugerindo que essas características estruturais desempenham papéis complementares no processo de decisão hierárquica.
+- Por outro lado, nos modelos SVC e KNN, as duas variáveis mais importantes foram o comprimento do sulco do núcleo e o coeficiente de assimetria, mostrando que, para métodos baseados em separação geométrica e proximidade, o formato e a distribuição dos grãos têm maior influência na classificação.
+
+**Comparação e Discussão**
+
+Os resultados indicaram que, embora todos os modelos tenham alcançado altas taxas de acurácia, os métodos baseados em proximidade (KNN) e separação (SVC) tiveram uma leve vantagem. Essa diferença pode ser atribuída à distribuição dos dados e à relevância das variáveis selecionadas:
+
+- O KNN, por exemplo, pode ter se beneficiado de uma boa separação entre classes no espaço das características, tornando sua abordagem direta e baseada em vizinhança mais eficiente.
+- O desempenho ligeiramente inferior da Floresta Aleatória e da Árvore de Decisão pode ser explicado pelo fato de que esses métodos têm maior propensão a depender de divisões hierárquicas que podem não capturar plenamente a interação entre as variáveis mais importantes.
+
+As diferenças observadas entre os modelos reforçam a importância de considerar as características específicas dos dados e do problema ao selecionar algoritmos de aprendizado de máquina.
 
 ## 4.2. Feedback dos Usuários
 

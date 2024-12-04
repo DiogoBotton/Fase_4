@@ -2,7 +2,7 @@ Downloaded from https://wokwi.com/projects/413103691995388929
 
 Simulate this project on https://wokwi.com
 
-**Componentes**
+Componentes
 
 - Microcontrolador: ESP32
 - Sensor de umidade e temperatura do solo: dht22
@@ -11,7 +11,7 @@ Simulate this project on https://wokwi.com
 - Bomba de água: representada pelo led azul
 - Sensor de ph
 
-**Funcionamento**
+Funcionamento
 
 - Leitura dos Sensores: O microcontrolador lê continuamente (delay 1000) os dados dos sensores de umidade, temperatura, potássio, fósforo e pH.
 - Acionamento da Bomba: Se a umidade do solo estiver abaixo do limite mínimo de 20% de umidade, o microcontrolador aciona a bomba de água através do relé.

@@ -211,3 +211,11 @@ Os resultados obtidos com o modelo RandomForestClassifier são excelentes e supe
 
 # <a name="c7"></a>Anexos
 
+**Bomba de agua desligada: Umidade do solo superior a 20%**
+
+<img src="../assets/bomba_desligada.jpg" border="0" width=30% height=30%>
+
+**Bomba de agua ligada: Umidade do solo inferior a 20%**
+
+<img src="../assets/bomba_ligada.jpg" border="0" width=30% height=30%>
+

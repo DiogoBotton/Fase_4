@@ -137,15 +137,46 @@ As diferenças observadas entre os modelos reforçam a importância de considera
 
 ## 4.2. Feedback dos Usuários
 
-*Inclua feedback recebido de usuários finais durante o processo de avaliação do projeto.*
+O projeto ainda não foi liberado para os usuários
 
 # <a name="c5"></a>5. Conclusões e Trabalhos Futuros
 
-*Descreva de que formas a solução desenvolvida atingiu os objetivos do projeto. Indique pontos fortes e pontos a melhorar. Relacione os pontos de melhorias evidenciados e elabore um plano de ações para serem implementadas no futuro.*
+A solução desenvolvida atingiu com sucesso o objetivo principal de criar um modelo de aprendizado de máquina capaz de classificar variedades de grãos de trigo com base em suas características físicas. Os resultados obtidos demonstram uma alta precisão na classificação, com o melhor modelo (KNN) alcançando uma acurácia de 96%.
+
+**Pontos Fortes**
+
+- Alta precisão: Todos os modelos testados apresentaram acurácia acima de 93%, com o melhor chegando a 96%.
+- Versatilidade: A comparação de diferentes algoritmos permitiu identificar a melhor abordagem para o problema específico.
+- Otimização: O uso de técnicas de busca de hiperparâmetros garantiu o melhor desempenho possível para cada modelo.
+- Interpretabilidade: A análise das variáveis mais importantes fornece insights valiosos sobre as características físicas mais relevantes para a classificação.
+
+**Pontos a Melhorar**
+
+- Validação em campo: O modelo ainda precisa ser testado em condições reais de uso em cooperativas agrícolas.
+- Expansão do conjunto de dados: Aumentar a diversidade e quantidade de amostras pode melhorar ainda mais a robustez do modelo.
+- Integração com sistemas existentes: Desenvolver interfaces para integração com os sistemas já utilizados pelas cooperativas.
+
+**Plano de Ações Futuras**
+
+- Implementar um projeto piloto em uma cooperativa parceira para validação em campo.
+- Desenvolver um sistema de coleta contínua de dados para expansão e atualização do conjunto de treinamento.
+- Criar uma API para facilitar a integração com sistemas externos.
+- Explorar técnicas de aprendizado profundo (deep learning) para potencialmente melhorar a acurácia.
+- Expandir o modelo para classificação de outros tipos de grãos além do trigo
 
 # <a name="c6"></a>6. Referências
 
-_Incluir as principais referências de seu projeto, para que outros possam consultar caso tenham interesse em aprofundar._
+- Scikit-learn: Machine Learning in Python | https://scikit-learn.org/stable/
+- Python Data Analysis Library (pandas) | https://pandas.pydata.org/
+- Matplotlib: Visualization with Python |https://matplotlib.org/
+- Seaborn: Statistical Data Visualization |https://seaborn.pydata.org/
+- NumPy | https://numpy.org/
+- CRISP-DM Guide | https://www.datascience-pm.com/crisp-dm-2/
+- Kaggle: Seeds Dataset | https://www.kaggle.com/datasets/jmcaro/wheat-seedsuci
+- UCI Machine Learning Repository: Seeds Data Set | https://archive.ics.uci.edu/ml/datasets/seeds
+- Python Official Documentation | https://docs.python.org/3/
+- Jupyter Project | https://jupyter.org/
+- ChatGPT | https://chatgpt.com/
 
 # <a name="c7"></a>Anexos
 

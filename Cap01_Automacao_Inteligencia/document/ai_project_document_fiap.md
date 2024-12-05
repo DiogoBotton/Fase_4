@@ -209,7 +209,11 @@ Os resultados obtidos com o modelo RandomForestClassifier são excelentes e supe
 
 - https://imbalanced-learn.org/stable/
 
-# <a name="c7"></a>Anexos
+# <a name="c7"></a>7.Vídeo
+
+**https://www.youtube.com/watch?v=jyvZizVfKhk**
+
+# <a name="c8"></a>Anexos
 
 **Bomba de agua desligada: Umidade do solo superior a 20%**
 

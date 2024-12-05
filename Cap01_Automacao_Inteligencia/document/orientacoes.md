@@ -12,12 +12,19 @@ Achamos interessante também utilizar uma ORM chamada SQLAlchemy para a realiza�
 **O que é uma ORM?**
 
 ORM é a sigla para Object-Relational Mapping, em português significa mapeamento objeto-relacional. É uma ferramenta que facilita o armazenamento e a recuperação de objetos de um banco de dados relacional sem a necessidade de escrever código SQL manualmente.
+
 Como inicializar a API?
+
 Para baixar as dependências da aplicação, abra o cmd no diretório do projeto e digite o seguinte comando:
+
     pip install -r requirements.txt
+    
 Para inicializar o banco de dados Oracle, abra o cmd no diretório do projeto e digite o seguinte comando:
+
     docker-compose up -d
+
 Para iniciar a aplicação, é necessário abrir o cmd no diretório "app" e rodar o seguinte código:
+
     uvicorn main:app --reload
     
 **Especificação de cada camada do projeto**
